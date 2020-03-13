@@ -19,4 +19,4 @@ javafx {
     modules = [ 'javafx.controls' ]
 }
 
-mainClassName = 'HelloFX'
+mainClassName = 'Main'

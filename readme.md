@@ -9,3 +9,8 @@ This is a project for IF2210 that is currently being maintained by 5 people.
    * If you have an older version of JDK, it is recommended to uninstall the older version first.
 2. Install Gradle Build Tool, follow [this tutorial](https://gradle.org/) for setting up Gradle.
 
+## Running the project
+Type in on your command line:
+```bash
+gradle run
+```
