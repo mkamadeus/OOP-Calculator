@@ -1,8 +1,9 @@
 package expressions;
 
 import expressions.Expression;
+import numbers.Number;
 
-abstract class TerminalExpression extends Expression{
+public class TerminalExpression extends Expression{
     
     protected Number x;
 
@@ -11,5 +12,9 @@ abstract class TerminalExpression extends Expression{
         this.x = x;
     }
 
-    abstract public Number solve();
+    public Number solve()
+    {
+        return x;
+    }
+
 }

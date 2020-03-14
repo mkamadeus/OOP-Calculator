@@ -1,6 +1,7 @@
 package expressions;
 
 import expressions.Expression;
+import numbers.Number;
 
 abstract class UnaryExpression extends Expression{
     

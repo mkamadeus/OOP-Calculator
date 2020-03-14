@@ -1,5 +1,7 @@
 package expressions;
 
-abstract class Expression {
-    abstract Number solve();
+import numbers.Number;
+
+public abstract class Expression {
+    public abstract Number solve();
 }
