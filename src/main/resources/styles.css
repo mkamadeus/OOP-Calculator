@@ -1,0 +1,29 @@
+.container {
+    -fx-background-color : rgb(238, 238, 238), rgb(238, 238, 238);
+}
+
+.text-display {
+    -fx-background-color: #EAEAEA, #EAEAEA;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+
+.input-display {
+    -fx-background-color: rgba(0,0,0,0), rgba(0,0,0,0);
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+
+.buttons {
+    -fx-background-color: rgb(238, 238, 238), rgb(238, 238, 238);
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+
+.buttons:hover {
+    -fx-background-color: rgb(238, 238, 238), rgb(238, 238, 238);
+}
+
+.buttons:pressed {
+    -fx-background-color: rgb(170, 170, 170), rgb(170, 170, 170);
+}

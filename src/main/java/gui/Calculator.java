@@ -1,37 +1,32 @@
 package gui;
 
 import javafx.application.Application;
-import javafx.geometry.HPos;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.VPos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent; 
+import javafx.event.EventHandler; 
 
 public class Calculator extends Application
 {
+    private TextField displayValue;
+
     public HBox displayBox()
     {
         // Create new HBox
         HBox displayContainer = new HBox();
 
-        // Create a new TextField
-        TextField displayValue = new TextField();
-
         displayValue.setEditable(false);
         displayValue.setPadding(new Insets(12,12,12,12));
         displayValue.setStyle("-fx-background-color: rgba(0,0,0,0), #ffffff;");
-        displayValue.setText("cilukba");
+        displayValue.setText("");
 
         displayContainer.setStyle("-fx-background-color:#eeeeee");
         displayContainer.setPadding(new Insets(12,12,12,12));
@@ -65,14 +60,26 @@ public class Calculator extends Application
             {"ANS", "MC", "MR", "<="},
         };
         
-        for(int i=0;i<6;i++)
+        for(int i=0;i<7;i++)
         {
             HBox h = new HBox();
             Button b;
             for(int j=0;j<4;j++)
             {
                 b = new Button(buttonText[i][j]);
+
+                final String s = buttonText[i][j];
+                EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+                    public void handle(ActionEvent e)
+                    {
+                        String tmp = displayValue.getText();
+                        tmp += s;
+                        displayValue.setText(tmp);
+                    }
+                };
+
                 b.setMinWidth(50);
+                b.setOnAction(event);
                 h.getChildren().add(b);
                 HBox.setHgrow(b, Priority.ALWAYS);
             }
@@ -84,18 +91,13 @@ public class Calculator extends Application
     }
 
     @Override
-    public void start(Stage stage)
+    public void start(Stage stage) throws Exception
     {
-        // Create new border pane
-        BorderPane border = new BorderPane();
-        
-        // Create display box
-        HBox hbox = displayBox();
-        
-        border.setTop(hbox);
-        border.setCenter(calculatorButtons());
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("layout.fxml"));
 
-        Scene scene = new Scene(border,300, 500);    
+        Scene scene = new Scene(root, 350, 700);
+
+        stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();
     }
