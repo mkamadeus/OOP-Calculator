@@ -1,12 +1,15 @@
 package gui;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -93,7 +96,11 @@ public class Calculator extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("layout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("layout.fxml"));
+
+//        loader.setController(new Controller());
+
+        Parent root = loader.load();
 
         Scene scene = new Scene(root, 350, 700);
 
