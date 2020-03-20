@@ -4,7 +4,7 @@ import expressions.Expression;
 import numbers.Number;
 import numbers.RealNumber;
 
-public class BinaryExpression extends Expression{
+abstract class BinaryExpression implements Expression{
     
     protected Expression e1;
     protected Expression e2;
@@ -15,8 +15,5 @@ public class BinaryExpression extends Expression{
         this.e2 = e2;
     }
 
-    public Number solve()
-    {
-        return new RealNumber(e1.solve().value() + e2.solve().value());
-    }
+    abstract public RealNumber solve();
 }

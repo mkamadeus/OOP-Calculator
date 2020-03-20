@@ -2,8 +2,9 @@ package expressions;
 
 import expressions.Expression;
 import numbers.Number;
+import numbers.RealNumber;
 
-abstract class UnaryExpression extends Expression{
+abstract class UnaryExpression implements Expression{
     
     protected Expression e;
 
@@ -12,5 +13,5 @@ abstract class UnaryExpression extends Expression{
         this.e = e;
     }
 
-    abstract public Number solve();
+    abstract public RealNumber solve();
 }
