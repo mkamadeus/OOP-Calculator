@@ -1,7 +1,8 @@
 package expressions;
 
 import numbers.Number;
+import numbers.RealNumber;
 
-public abstract class Expression {
-    public abstract Number solve();
+interface Expression {
+    public RealNumber solve();
 }

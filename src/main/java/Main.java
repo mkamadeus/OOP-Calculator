@@ -15,16 +15,25 @@ public class Main extends Application {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
 
-        Expression num1 = new TerminalExpression(new RealNumber(5.0));
-        Expression num2 = new TerminalExpression(new RealNumber(7.0));
-        Expression num3 = new BinaryExpression(num1, num2);
+        // String query1 = "2+3/5-7.5";
+        String query1 = "9-(-3)";
+        // String query3 = "23+5-7";
 
-        String res1 = num1.solve().value().toString();
-        String res2 = num2.solve().value().toString();
-        String res3 = num3.solve().value().toString();
+        EvaluateExpression exp1 = new EvaluateExpression(query1);
+        // EvaluateExpression exp2 = new EvaluateExpression(query2);
+        // EvaluateExpression exp3 = new EvaluateExpression(query3);
+
+        RealNumber ans1 = exp1.parse();
+        // RealNumber ans2 = exp2.parse();
+        // RealNumber ans3 = exp3.parse();
+
+        String res1 = ans1.value().toString();
+        // String res2 = ans2.value().toString();
+        // String res3 = ans3.value().toString();
 
         // Create JavaFX Label
-        Label l = new Label(res1 + "+" + res2 + "=" + res3);
+        // Label l = new Label("2+3/5-7.5 = " + res1 + "\n" + "3-(7-(3)) = " + res2 + "\n" + "-(2-(-3*5)) = ");
+        Label l = new Label(res1);
 
         // Setup JavaFX Scene for creating windows
         Scene scene = new Scene(new StackPane(l), 640, 480);
