@@ -45,6 +45,8 @@ public class Controller {
     private Button buttonParOpen;
     @FXML
     private Button buttonParClose;
+    @FXML
+    private Button buttonPower;
 
     /* -=-=-=-=- FUNCTION RELATED BUTTONS -=-=-=-=- */
     @FXML
@@ -92,7 +94,8 @@ public class Controller {
             new KeyCodeCombination(KeyCode.DIGIT8, KeyCombination.SHIFT_DOWN),
             new KeyCodeCombination(KeyCode.SLASH),
             new KeyCodeCombination(KeyCode.DIGIT9, KeyCombination.SHIFT_DOWN),
-            new KeyCodeCombination(KeyCode.DIGIT0, KeyCombination.SHIFT_DOWN)
+            new KeyCodeCombination(KeyCode.DIGIT0, KeyCombination.SHIFT_DOWN),
+            new KeyCodeCombination(KeyCode.DIGIT6, KeyCombination.SHIFT_DOWN),
     };
 
     // Array to store function buttons reference
@@ -122,13 +125,14 @@ public class Controller {
         numberButtons[10] = buttonPoint;
 
         // Initialize array to operator buttons reference
-        operatorButtons = new Button[6];
+        operatorButtons = new Button[7];
         operatorButtons[0] = buttonPlus;
         operatorButtons[1] = buttonMinus;
         operatorButtons[2] = buttonMultiply;
         operatorButtons[3] = buttonDivide;
         operatorButtons[4] = buttonParOpen;
         operatorButtons[5] = buttonParClose;
+        operatorButtons[6] = buttonPower;
 
         // Initialize array to function buttons reference
         functionButtons = new Button[4];
@@ -144,11 +148,22 @@ public class Controller {
         System.out.println(event);
 
         // Check for operators
-        for(int i = 0; i < 6 ; i++) if(operatorKeyCodes[i].match(event)) {
+        for(int i = 0; i < 7 ; i++) if(operatorKeyCodes[i].match(event)) {
             operatorButtons[i].getStyleClass().removeAll("buttons");
             operatorButtons[i].getStyleClass().add("buttons:pressed");
 
             equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + operatorButtons[i].getText());
+            numberDisplay.setText("");
+
+            return;
+        }
+
+        // Check for functions
+        for(int i = 0; i < 4; i++) if(functionKeyCodes[i].match(event)){
+            functionButtons[i].getStyleClass().removeAll("buttons");
+            functionButtons[i].getStyleClass().add("buttons:pressed");
+
+            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + functionButtons[i].getText() + "(");
             numberDisplay.setText("");
 
             return;
@@ -162,8 +177,15 @@ public class Controller {
                 numberButtons[i].getStyleClass().removeAll("buttons");
                 numberButtons[i].getStyleClass().add("buttons:pressed");
 
+                // If period...
+                if(i==10)
+                {
+                    if (numberDisplay.getText().equals("")) numberDisplay.setText("0");
+                    numberDisplay.setText(numberDisplay.getText() + ".");
+                }
                 // If input is 0 and currently no text...
-                if(i!=0 || !("".equals(numberDisplay.getText()))) {
+                else if(i!=0 || !("".equals(numberDisplay.getText())))
+                {
                     numberDisplay.setText(numberDisplay.getText() + i);
                 }
 
@@ -201,7 +223,7 @@ public class Controller {
     @FXML
     private void handleOnKeyReleased(KeyEvent event) {
         // Check for operators
-        for(int i = 0; i < 6; i++) if(operatorKeyCodes[i].match(event))
+        for(int i = 0; i < 7; i++) if(operatorKeyCodes[i].match(event))
         {
             operatorButtons[i].getStyleClass().removeAll("buttons:pressed");
             operatorButtons[i].getStyleClass().add("buttons");
@@ -209,6 +231,14 @@ public class Controller {
             return;
         }
 
+        // Check for functions
+        for(int i = 0; i < 4; i++) if(functionKeyCodes[i].match(event))
+        {
+            functionButtons[i].getStyleClass().removeAll("buttons:pressed");
+            functionButtons[i].getStyleClass().add("buttons");
+
+            return;
+        }
         // Check for number key
         for (int i = 0; i < 11; i++) {
             if (event.getCode() == numberKeyCodes[i]) {

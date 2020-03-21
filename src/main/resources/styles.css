@@ -1,6 +1,9 @@
 .container {
     -fx-background-color : rgb(238, 238, 238), rgb(238, 238, 238);
 }
+.container2 {
+    -fx-background-color : red,red;
+}
 
 .text-display {
     -fx-background-color: #EAEAEA, #EAEAEA;
