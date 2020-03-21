@@ -8,8 +8,7 @@ import javafx.scene.input.*;
 
 public class Controller {
 
-    @FXML
-    private Button buttonClear;
+    /* -=-=-=-=- NUMBER RELATED BUTTONS -=-=-=-=- */
     @FXML
     private Button button0;
     @FXML
@@ -30,7 +29,10 @@ public class Controller {
     private Button button8;
     @FXML
     private Button button9;
+    @FXML
+    private Button buttonPoint;
 
+    /* -=-=-=-=- OPERATOR RELATED BUTTONS -=-=-=-=- */
     @FXML
     private Button buttonPlus;
     @FXML
@@ -44,11 +46,27 @@ public class Controller {
     @FXML
     private Button buttonParClose;
 
+    /* -=-=-=-=- FUNCTION RELATED BUTTONS -=-=-=-=- */
+    @FXML
+    private Button buttonSine;
+    @FXML
+    private Button buttonCosine;
+    @FXML
+    private Button buttonTangent;
+    @FXML
+    private Button buttonSqrt;
 
+
+    /* -=-=-=-=- DISPLAY RELATED FIELDS -=-=-=-=- */
     @FXML
     private TextField equationDisplay;
     @FXML
     private TextField numberDisplay;
+    @FXML
+    private Button buttonBackspace;
+    @FXML
+    private Button buttonClear;
+
 
     // Array to store number buttons reference
     private Button[] numberButtons;
@@ -62,7 +80,8 @@ public class Controller {
             KeyCode.DIGIT6,
             KeyCode.DIGIT7,
             KeyCode.DIGIT8,
-            KeyCode.DIGIT9
+            KeyCode.DIGIT9,
+            KeyCode.PERIOD
     };
 
     // Array to store operator buttons reference
@@ -76,10 +95,20 @@ public class Controller {
             new KeyCodeCombination(KeyCode.DIGIT0, KeyCombination.SHIFT_DOWN)
     };
 
+    // Array to store function buttons reference
+    private Button[] functionButtons;
+    private KeyCombination[] functionKeyCodes = {
+            new KeyCodeCombination(KeyCode.S, KeyCombination.SHIFT_DOWN),
+            new KeyCodeCombination(KeyCode.C, KeyCombination.SHIFT_DOWN),
+            new KeyCodeCombination(KeyCode.T, KeyCombination.SHIFT_DOWN),
+            new KeyCodeCombination(KeyCode.R, KeyCombination.SHIFT_DOWN),
+    };
+
     @FXML
     public void initialize()
     {
-        numberButtons = new Button[10];
+        // Initialize array to number buttons reference
+        numberButtons = new Button[11];
         numberButtons[0] = button0;
         numberButtons[1] = button1;
         numberButtons[2] = button2;
@@ -90,7 +119,9 @@ public class Controller {
         numberButtons[7] = button7;
         numberButtons[8] = button8;
         numberButtons[9] = button9;
+        numberButtons[10] = buttonPoint;
 
+        // Initialize array to operator buttons reference
         operatorButtons = new Button[6];
         operatorButtons[0] = buttonPlus;
         operatorButtons[1] = buttonMinus;
@@ -99,6 +130,13 @@ public class Controller {
         operatorButtons[4] = buttonParOpen;
         operatorButtons[5] = buttonParClose;
 
+        // Initialize array to function buttons reference
+        functionButtons = new Button[4];
+        functionButtons[0] = buttonSine;
+        functionButtons[1] = buttonCosine;
+        functionButtons[2] = buttonTangent;
+        functionButtons[3] = buttonSqrt;
+
     }
 
     @FXML
@@ -106,8 +144,7 @@ public class Controller {
         System.out.println(event);
 
         // Check for operators
-        for(int i = 0; i < 6 ; i++) if(operatorKeyCodes[i].match(event))
-        {
+        for(int i = 0; i < 6 ; i++) if(operatorKeyCodes[i].match(event)) {
             operatorButtons[i].getStyleClass().removeAll("buttons");
             operatorButtons[i].getStyleClass().add("buttons:pressed");
 
@@ -117,8 +154,8 @@ public class Controller {
             return;
         }
 
-        // Check for number key press
-        for(int i = 0; i < 10; i++)
+        // Check for number key
+        for(int i = 0; i < 11; i++)
         {
             if(event.getCode() == numberKeyCodes[i])
             {
@@ -134,12 +171,27 @@ public class Controller {
             }
         }
 
+        // Check for BACKSPACE Key
+        if(event.getCode() == KeyCode.BACK_SPACE)
+        {
+            buttonBackspace.getStyleClass().removeAll("buttons");
+            buttonBackspace.getStyleClass().add("buttons:pressed");
+
+            if(!numberDisplay.getText().equals(""))
+            {
+                String currentText = numberDisplay.getText();
+                numberDisplay.setText(currentText.substring(0,currentText.length()-1));
+                return;
+            }
+        }
+
         // Check for DELETE Key
         if(event.getCode() == KeyCode.DELETE)
         {
             buttonClear.getStyleClass().removeAll("buttons");
             buttonClear.getStyleClass().add("buttons:pressed");
             numberDisplay.setText("");
+            equationDisplay.setText("");
 
             return;
         }
@@ -151,19 +203,26 @@ public class Controller {
         // Check for operators
         for(int i = 0; i < 6; i++) if(operatorKeyCodes[i].match(event))
         {
-            operatorButtons[0].getStyleClass().removeAll("buttons:pressed");
-            operatorButtons[0].getStyleClass().add("buttons");
+            operatorButtons[i].getStyleClass().removeAll("buttons:pressed");
+            operatorButtons[i].getStyleClass().add("buttons");
 
             return;
         }
 
-        // Check for number key press
-        for (int i = 0; i < 10; i++) {
+        // Check for number key
+        for (int i = 0; i < 11; i++) {
             if (event.getCode() == numberKeyCodes[i]) {
                 numberButtons[i].getStyleClass().removeAll("buttons:pressed");
                 numberButtons[i].getStyleClass().add("buttons");
                 return;
             }
+        }
+
+        // Check for BACKSPACE key
+        if(event.getCode() == KeyCode.BACK_SPACE)
+        {
+            buttonBackspace.getStyleClass().removeAll("buttons:pressed");
+            buttonBackspace.getStyleClass().add("buttons");
         }
 
         // Check for DELETE key

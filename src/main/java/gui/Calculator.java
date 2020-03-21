@@ -18,7 +18,7 @@ public class Calculator extends Application
         Parent root = loader.load();
 
         // Setup new scene
-        Scene scene = new Scene(root, 350, 700);
+        Scene scene = new Scene(root, 400, 600);
 
         // Set stage to the scene
         stage.setTitle("Calculator");
