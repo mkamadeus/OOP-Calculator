@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01f2e785-9609-407c-8d8e-1f20de564b65" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/expressions/BinaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/expressions/BinaryExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expressions/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/expressions/Expression.java" afterDir="false" />
-    </list>
+    <list default="true" id="01f2e785-9609-407c-8d8e-1f20de564b65" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +22,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,6 +42,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="492" y="238" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1584621120390" />
+    <state x="421" y="104" key="FileChooserDialogImpl" timestamp="1584626838735">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="104" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1584626838735" />
     <state x="348" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1584617217254">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

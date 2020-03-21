@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f379d5d-2858-4100-a4a0-e0ee73eb29d3" name="Default Changelist" comment="" />
+    <list default="true" id="5f379d5d-2858-4100-a4a0-e0ee73eb29d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,9 +43,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="492" y="238" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584459430989">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state x="492" y="228" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584626852215">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
+    <state x="492" y="228" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1584626852215" />
     <state x="492" y="238" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.720@0.0.1280.720" timestamp="1584459430989" />
     <state x="348" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1584459392110">
       <screen x="0" y="0" width="1280" height="720" />
