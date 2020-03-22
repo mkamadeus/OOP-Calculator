@@ -1,10 +1,11 @@
 package gui;
 
+import expressions.EvaluateExpression;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.input.*;
+import numbers.RealNumber;
 
 public class Controller {
 
@@ -31,6 +32,8 @@ public class Controller {
     private Button button9;
     @FXML
     private Button buttonPoint;
+    @FXML
+    private Button buttonAns;
 
     /* -=-=-=-=- OPERATOR RELATED BUTTONS -=-=-=-=- */
     @FXML
@@ -68,6 +71,8 @@ public class Controller {
     private Button buttonBackspace;
     @FXML
     private Button buttonClear;
+    @FXML
+    private Button buttonEquals;
 
 
     // Array to store number buttons reference
@@ -158,6 +163,24 @@ public class Controller {
             return;
         }
 
+        // Check for equal button
+        if(event.getCode() == KeyCode.EQUALS || event.getCode() == KeyCode.ENTER)
+        {
+            buttonEquals.getStyleClass().removeAll("buttons");
+            buttonEquals.getStyleClass().add("buttons:pressed");
+
+            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
+
+            // Evaluate expression
+            EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
+            RealNumber result = evaluator.parse();
+
+            numberDisplay.setText(result.value().toString());
+
+            equationDisplay.setText("");
+
+        }
+
         // Check for functions
         for(int i = 0; i < 4; i++) if(functionKeyCodes[i].match(event)){
             functionButtons[i].getStyleClass().removeAll("buttons");
@@ -229,6 +252,14 @@ public class Controller {
             operatorButtons[i].getStyleClass().add("buttons");
 
             return;
+        }
+
+        // Check for equal button
+        if(event.getCode() == KeyCode.EQUALS || event.getCode() == KeyCode.ENTER)
+        {
+            buttonEquals.getStyleClass().removeAll("buttons:pressed");
+            buttonEquals.getStyleClass().add("buttons");
+
         }
 
         // Check for functions

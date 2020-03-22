@@ -131,9 +131,9 @@ public class EvaluateExpression {
 
 			// if encountering ans
 			else if(token.charAt(i) == 'a'){
-				RealNumber number = new RealNumber(ans);
+				RealNumber number = new RealNumber("0");
 				operand.push(number);
-				i += 2
+				i += 2;
 				if(!operator.empty()){
 					if(operator.peek().equals("neg")){
 						RealNumber val1 = operand.peek();
