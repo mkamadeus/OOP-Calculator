@@ -98,6 +98,7 @@ public class EvaluateExpression {
 
 		Stack<RealNumber> operand = new Stack<RealNumber>();
 		Stack<String> operator = new Stack<String>();
+		Queue<Double> memory = new Queue<Double>();
 		int i;
 
 		for(i = 0; i < token.length(); i++)
@@ -180,6 +181,28 @@ public class EvaluateExpression {
 				}
 			}
 
+			//encountering mr
+			else if(token.charAt(i) == 'r'){
+				RealNumber number = new RealNumber(memory.remove());
+				operand.push(number);
+				if(!operator.empty()){
+					if(operator.peek().equals("neg")){
+						RealNumber val1 = operand.peek();
+						Expression num1 = new TerminalExpression(val1);
+						operand.pop();
+						String op = operator.peek();
+						operator.pop();
+						operand.push(solveUnary(num1, op));
+					}
+				}
+			}
+
+			//encountering mc
+			else if(token.charAt(i) == 'm'){
+				RealNumber number = new RealNumber(operand.peek());
+				memory.add(number.value());
+			}
+
 			else if(token.charAt(i) == ')')
 			{
 				if(!operator.empty()){
@@ -259,6 +282,7 @@ public class EvaluateExpression {
 				else if(token.charAt(i)=='s' && token.charAt(i+1)=='q'){
 					cur = "sqrt";
 					i += 3;
+				}
 				}
 				if(!operator.empty()){
 					while((pred.get(operator.peek()) >= pred.get(cur))){
