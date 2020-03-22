@@ -4,9 +4,9 @@ import exceptions.BaseException;
 import expressions.EvaluateExpression;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.input.*;
-import numbers.RealNumber;
 
 public class Controller {
 
@@ -37,6 +37,8 @@ public class Controller {
     private Button buttonPoint;
     @FXML
     private Button buttonAns;
+    @FXML
+    private Button buttonPi;
 
     /* -=-=-=-=- OPERATOR RELATED BUTTONS -=-=-=-=- */
     @FXML
@@ -229,6 +231,15 @@ public class Controller {
             return;
         }
 
+        // Check for pi button
+        if(new KeyCodeCombination(KeyCode.P, KeyCombination.SHIFT_DOWN).match(event))
+        {
+            buttonOnKeyPressStyle(buttonPi);
+            buttonPiAction();
+
+            return;
+        }
+
     }
 
     @FXML
@@ -282,14 +293,92 @@ public class Controller {
             return;
         }
 
+        // Check for pi button
+        if(new KeyCodeCombination(KeyCode.P, KeyCombination.SHIFT_DOWN).match(event))
+        {
+            buttonOnKeyReleaseStyle(buttonPi);
+            return;
+        }
     }
 
     @FXML
-    private void handleOnNumberClick(MouseEvent mouseEvent)
+    private void handleOnMouseClick(MouseEvent mouseEvent)
     {
-        String text = ((Button)mouseEvent.getSource()).getText();
-        numberDisplay.setText(numberDisplay.getText() + text);
+        String id = ((Control)mouseEvent.getSource()).getId().substring(6);
+        System.out.println(id);
+
+        switch(id)
+        {
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+                buttonNumberAction(numberButtons[Integer.parseInt(id)]);
+                break;
+            case "Point":
+                buttonPeriodAction(numberButtons[10]);
+                break;
+            case "Plus":
+                buttonOperatorAction(operatorButtons[0]);
+                break;
+            case "Minus":
+                buttonOperatorAction(operatorButtons[1]);
+                break;
+            case "Multiply":
+                buttonOperatorAction(operatorButtons[2]);
+                break;
+            case "Divide":
+                buttonOperatorAction(operatorButtons[3]);
+                break;
+            case "ParOpen":
+                buttonOperatorAction(operatorButtons[4]);
+                break;
+            case "ParClose":
+                buttonOperatorAction(operatorButtons[5]);
+                break;
+            case "Power":
+                buttonOperatorAction(operatorButtons[6]);
+                break;
+            case "Sine":
+                buttonOperatorAction(functionButtons[0]);
+                break;
+            case "Cosine":
+                buttonOperatorAction(functionButtons[1]);
+                break;
+            case "Tangent":
+                buttonOperatorAction(functionButtons[2]);
+                break;
+            case "Sqrt":
+                buttonOperatorAction(functionButtons[3]);
+                break;
+            case "Ans":
+                buttonAnsAction();
+                break;
+            case "Clear":
+                buttonClearAction();
+                break;
+            case "Backspace":
+                buttonBackspaceAction();
+                break;
+            case "Equals":
+                buttonEqualsAction();
+                break;
+            case "Pi":
+                buttonPiAction();
+                break;
+            default:
+                break;
+        }
+
     }
+
+    /* -=-=-=-=- ACTION RELATED METHODS -=-=-=-=- */
 
     private void buttonOnKeyPressStyle(Button b)
     {
@@ -364,6 +453,16 @@ public class Controller {
     {
         numberDisplay.setText("");
         equationDisplay.setText("");
+    }
+
+    private void buttonPiAction()
+    {
+        if(numberDisplay.getText().equals(""))
+            equationDisplay.setText(equationDisplay.getText() + "pi");
+        else
+            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() +"*pi");
+
+        numberDisplay.setText("");
     }
 
 }
