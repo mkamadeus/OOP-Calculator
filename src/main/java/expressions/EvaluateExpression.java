@@ -181,24 +181,37 @@ public class EvaluateExpression {
 			}
 
 			else if(token.charAt(i) == ')')
-			{
+			{	
+				boolean found = false;
 				if(!operator.empty()){
-					while(!operator.peek().equals("("))
-					{
-						RealNumber val2 = operand.peek();
-						Expression num2 = new TerminalExpression(val2);
-						operand.pop();
+					while(!operator.empty()){
+						if(!operator.peek().equals("("))
+						{
+							RealNumber val2 = operand.peek();
+							Expression num2 = new TerminalExpression(val2);
+							operand.pop();
 
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
 
-						String op = operator.peek();
-						operator.pop();
+							String op = operator.peek();
+							operator.pop();
 
-						operand.push(solveBinary(num1, num2, op));
-
+							operand.push(solveBinary(num1, num2, op));
+						}
+						else 
+						{	
+							found = true;
+							break;
+						}
 					}
+
+					if(operator.empty() && !found){
+						BaseException exp = new ImbalancedParanthesesException();
+						throw exp;
+					}
+					
 					operator.pop();
 					if(!operator.empty()){
 						String op = operator.peek();
