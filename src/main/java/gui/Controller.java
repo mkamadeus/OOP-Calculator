@@ -1,12 +1,15 @@
 package gui;
 
 import exceptions.BaseException;
+import exceptions.QueueEmptyException;
 import expressions.EvaluateExpression;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.input.*;
+import numbers.Number;
+import numbers.RealNumber;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -165,11 +168,13 @@ public class Controller {
 
     @FXML
 
-    private void handleOnKeyPressed(KeyEvent event) {
+    private void handleOnKeyPressed(KeyEvent event) throws BaseException {
         // Check for MC
         if(event.getCode() == KeyCode.C)
         {
             // ubah style pas pressed, panggil action, ini jgn lupa ada
+            buttonOnKeyPressStyle(buttonMC);
+            buttonMCAction();
 
             return;
         }
@@ -178,7 +183,8 @@ public class Controller {
         if(event.getCode() == KeyCode.R)
         {
             // ubah style pas pressed, panggil action
-
+            buttonOnKeyPressStyle(buttonMR);
+            buttonMRAction();
             return;
         }
 
@@ -271,6 +277,7 @@ public class Controller {
         if(event.getCode() == KeyCode.C)
         {
             // ubah style pas pressed, pasangan yg on pressed
+            buttonOnKeyReleaseStyle(buttonMC);
 
             return;
         }
@@ -278,6 +285,7 @@ public class Controller {
         // Check for MR
         if(event.getCode() == KeyCode.R) {
             // ubah style pas pressed, panggil action
+            buttonOnKeyReleaseStyle(buttonMR);
 
             return;
         }
@@ -340,8 +348,7 @@ public class Controller {
     }
 
     @FXML
-    private void handleOnMouseClick(MouseEvent mouseEvent)
-    {
+    private void handleOnMouseClick(MouseEvent mouseEvent) throws BaseException {
         String id = ((Control)mouseEvent.getSource()).getId().substring(6);
         System.out.println(id);
 
@@ -412,9 +419,11 @@ public class Controller {
                 break;
             case "MC":
                 //action
+                buttonMCAction();
                 break;
             case "MR":
                 //action
+                buttonMRAction();
                 break;
             default:
                 break;
@@ -453,20 +462,30 @@ public class Controller {
         numberDisplay.setText("");
     }
 
-    private void buttonEqualsAction() {
+    private void buttonEqualsAction() throws BaseException {
         equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
 
         /* -=-=-= TRY CATCH BLOCK HERE -=-=-==-= */
+        try{
+            // Evaluate expression
+            EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
+            RealNumber result = evaluator.parse();
+
+            ans = result.value();
+            numberDisplay.setText(result.value().toString());
+            equationDisplay.setText("");
+
+        } catch (BaseException e){
+            equationDisplay.setText(equationDisplay.getText() + "  ERROR: " + e.error());
+            numberDisplay.setText("");
+        }
 
         // Evaluate expression
-        EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
-        Number result = evaluator.parse();
+        // EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
+        // RealNumber result = evaluator.parse();
 
         // Save value to ans
-        ans = result;
 
-        numberDisplay.setText(result.toString());
-        equationDisplay.setText("");
     }
 
     private void buttonFunctionAction(Button b)
@@ -499,6 +518,7 @@ public class Controller {
     {
         numberDisplay.setText("");
         equationDisplay.setText("");
+        history.clear();
     }
 
     private void buttonPiAction()
@@ -514,11 +534,32 @@ public class Controller {
     private void buttonMCAction()
     {
         // Action
+        history.add(ans);
+
     }
 
-    private void buttonMRAction()
+    private void buttonMRAction() throws BaseException
     {
         // Action
+
+        try
+        {
+            Double mr = history.peek();
+            String mrString = mr.toString();
+            history.remove();
+            if(numberDisplay.getText().equals(""))
+                equationDisplay.setText(equationDisplay.getText() + mrString);
+            else
+                equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() +"*" +mrString);
+
+            numberDisplay.setText("");
+        }
+        catch (NullPointerException err)
+        {
+            throw new QueueEmptyException();
+        }
+
+
     }
 
 

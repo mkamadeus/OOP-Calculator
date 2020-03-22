@@ -2,7 +2,7 @@ package exceptions;
 
 public class NegativeRootException extends BaseException {
 
-		public NegativeRootException(){
+    public NegativeRootException(){
 			super();
 		}
 
