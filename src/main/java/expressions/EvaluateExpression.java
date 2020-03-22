@@ -305,6 +305,14 @@ public class EvaluateExpression {
 
 		while(!operator.empty())
 		{
+			String op = operator.peek();
+			operator.pop();
+
+			if(op.equals("(")){
+				BaseException exp = new ImbalancedParanthesesException();
+				throw exp;
+			}
+
 			RealNumber val2 = operand.peek();
 			Expression num2 = new TerminalExpression(val2);
 			operand.pop();
@@ -313,9 +321,7 @@ public class EvaluateExpression {
 			Expression num1 = new TerminalExpression(val1);
 			operand.pop();
 
-			String op = operator.peek();
-			operator.pop();
-
+			
 			operand.push(solveBinary(num1, num2, op));
 		}
 		
