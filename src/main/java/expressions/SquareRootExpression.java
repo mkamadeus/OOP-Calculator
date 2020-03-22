@@ -14,8 +14,7 @@ public class SquareRootExpression extends UnaryExpression{
         super(e1);
     }
 
-    public RealNumber solve()
-    {
+    public RealNumber solve() throws BaseException {
     		if(e.solve().value() < 0)
     		{
     			BaseException exp = new NegativeRootException();

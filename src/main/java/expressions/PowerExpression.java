@@ -14,7 +14,7 @@ public class PowerExpression extends BinaryExpression{
         super(e1,e2);
     }
 
-    public RealNumber solve()
+    public RealNumber solve() throws BaseException
     {		
     	Double res;
 
@@ -24,8 +24,7 @@ public class PowerExpression extends BinaryExpression{
     	}
     	catch(Exception e)
     	{
-    		BaseException exp = new NegativeRootException();
-    		throw exp;
+			throw new NegativeRootException();
     	}
 
       return new RealNumber(res);

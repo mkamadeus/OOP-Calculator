@@ -32,8 +32,7 @@ public class EvaluateExpression {
 		this.token = exp;
 	}
 
-	public RealNumber solveUnary(Expression num1, String op)
-	{
+	public RealNumber solveUnary(Expression num1, String op) throws BaseException {
 		RealNumber def = new RealNumber();
 		if(op.equals("sin"))
 		{
@@ -63,8 +62,7 @@ public class EvaluateExpression {
 		return def;
 	}
 
-	public RealNumber solveBinary(Expression num1, Expression num2, String op)
-	{
+	public RealNumber solveBinary(Expression num1, Expression num2, String op) throws BaseException {
 		RealNumber def = new RealNumber();
 		if(op.equals("+"))
 		{
@@ -83,8 +81,12 @@ public class EvaluateExpression {
 		} 
 		else if(op.equals("/"))
 		{
-			Expression tempVal = new DivideExpression(num1, num2); //etc..
-			return tempVal.solve();
+			try {
+				Expression tempVal = new DivideExpression(num1, num2); //etc..
+				return tempVal.solve();
+			} catch (BaseException exp){
+				throw exp;
+			}
 		}
 		else if(op.equals("^"))
 		{
@@ -94,18 +96,23 @@ public class EvaluateExpression {
 		return def;
 	}
 
-	public RealNumber parse()
-	{
+	public RealNumber parse() throws BaseException {
 
 		Stack<RealNumber> operand = new Stack<RealNumber>();
 		Stack<String> operator = new Stack<String>();
 		int i;
+		boolean afterNumber = false;
 
 		for(i = 0; i < token.length(); i++)
 		{
 
 			if(token.charAt(i) == '(') 
 			{
+				if(afterNumber)
+				{
+					operator.push("*");
+					afterNumber = false;
+				}
 				operator.push("(");
 			}
 
@@ -120,6 +127,7 @@ public class EvaluateExpression {
 				i--;
 				RealNumber number = new RealNumber(tempNumber);
 				operand.push(number);
+				afterNumber = true;
 				if(!operator.empty()){
 					if(operator.peek().equals("neg")){
 						RealNumber val1 = operand.peek();
@@ -132,30 +140,13 @@ public class EvaluateExpression {
 				}
 			}
 
-			// if encountering ans
-<<<<<<< HEAD
-			// else if(token.charAt(i) == 'a'){
-			// 	RealNumber number = new RealNumber(ans);
-			// 	operand.push(number);
-			// 	i += 2;
-			// 	if(!operator.empty()){
-			// 		if(operator.peek().equals("neg")){
-			// 			RealNumber val1 = operand.peek();
-			// 			Expression num1 = new TerminalExpression(val1);
-			// 			operand.pop();
-			// 			String op = operator.peek();
-			// 			operator.pop();
-			// 			operand.push(solveUnary(num1, op));
-			// 		}
-			// 	}
-			// }
-=======
 			else if(token.charAt(i) == 'A' ){
 				RealNumber number = new RealNumber(Controller.ans.toString());
 				operand.push(number);
 				i += 2;
-				if(!operator.empty()){
-					if(operator.peek().equals("neg")){
+				afterNumber = true;
+				if(!operator.empty()) {
+					if (operator.peek().equals("neg")) {
 						RealNumber val1 = operand.peek();
 						Expression num1 = new TerminalExpression(val1);
 						operand.pop();
@@ -165,12 +156,12 @@ public class EvaluateExpression {
 					}
 				}
 			}
->>>>>>> ed797a441022d8aac60002d1c8407fc62a44454a
 
 			//encountering euler constant as operand, not exponent component
 			else if(token.charAt(i) == 'e'){
 				RealNumber number = new RealNumber(Math.exp(1));
 				operand.push(number);
+				afterNumber = true;
 				if(!operator.empty()){
 					if(operator.peek().equals("neg")){
 						RealNumber val1 = operand.peek();
@@ -188,6 +179,7 @@ public class EvaluateExpression {
 				RealNumber number = new RealNumber(Math.PI);
 				i += 1;
 				operand.push(number);
+				afterNumber = true;
 				if(!operator.empty()){
 					if(operator.peek().equals("neg")){
 						RealNumber val1 = operand.peek();
@@ -201,7 +193,8 @@ public class EvaluateExpression {
 			}
 
 			else if(token.charAt(i) == ')')
-			{	
+			{
+				afterNumber = false;
 				boolean found = false;
 				if(!operator.empty()){
 					while(!operator.empty()){
@@ -267,23 +260,36 @@ public class EvaluateExpression {
 							operator.pop();
 							operand.push(solveUnary(num1, op));
 						}
+						else if(op.equals("neg"))
+						{
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
+							operator.pop();
+							operand.push(solveUnary(num1, op));
+						}
 					}
-
+					afterNumber = true;
 				} 
-				else 
-				{
+				else {
 					BaseException exp = new ImbalancedParanthesesException();
 					throw exp;
 				}
-				
 			}
 
-			else if(token.charAt(i)=='-' && (i==0 || (i>0 && token.charAt(i-1)=='('))) {
+			else if(token.charAt(i)=='-' && (i==0 || (i>0 && token.charAt(i-1)=='(')))
+			{
 				operator.push("neg");
+			}
+
+			else if(token.charAt(i)=='+' && i==0)
+			{
+				continue;
 			}
 			
 			else 
-			{	
+			{
+				afterNumber = false;
 				String cur = String.valueOf(token.charAt(i));
 				if(token.charAt(i)=='t'){
 					cur = "tan";
@@ -340,7 +346,6 @@ public class EvaluateExpression {
 			RealNumber val1 = operand.peek();
 			Expression num1 = new TerminalExpression(val1);
 			operand.pop();
-
 			
 			operand.push(solveBinary(num1, num2, op));
 		}

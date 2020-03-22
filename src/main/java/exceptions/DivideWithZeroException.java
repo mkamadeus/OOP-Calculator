@@ -6,7 +6,7 @@ public class DivideWithZeroException extends BaseException {
 			super();
 		}
 
-    protected String error() {
+    public String error() {
         return "Can't divide with zero";
     }
 }

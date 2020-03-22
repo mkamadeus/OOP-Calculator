@@ -6,7 +6,7 @@ public class NegativeRootException extends BaseException {
 			super();
 		}
 
-    protected String error() {
+    public String error() {
         return "This calculator doesn't support complex number";
     }
 }

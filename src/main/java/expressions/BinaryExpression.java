@@ -1,5 +1,6 @@
 package expressions;
 
+import exceptions.BaseException;
 import expressions.Expression;
 import numbers.Number;
 import numbers.RealNumber;
@@ -15,5 +16,5 @@ abstract class BinaryExpression implements Expression{
         this.e2 = e2;
     }
 
-    abstract public RealNumber solve();
+    abstract public RealNumber solve() throws BaseException;
 }

@@ -1,5 +1,6 @@
 package expressions;
 
+import exceptions.BaseException;
 import expressions.Expression;
 import numbers.Number;
 import numbers.RealNumber;
@@ -13,5 +14,5 @@ abstract class UnaryExpression implements Expression{
         this.e = e;
     }
 
-    abstract public RealNumber solve();
+    abstract public RealNumber solve() throws BaseException;
 }

@@ -14,13 +14,12 @@ public class DivideExpression extends BinaryExpression{
         super(e1,e2);
     }
 
-    public RealNumber solve()
-    {	
+    public RealNumber solve() throws BaseException
+    {
     		if (e2.solve().value() == 0)
     		{
-    			BaseException exp = new DivideWithZeroException();
-    			throw exp;
-    		} 
+                throw new DivideWithZeroException();
+    		}
             else
     		{
     			return new RealNumber(e1.solve().value() / e2.solve().value());

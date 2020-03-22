@@ -4,5 +4,5 @@ public abstract class BaseException extends Exception {
 
 		public BaseException() {}
 
-    abstract protected String error();
+    abstract public String error();
 }

@@ -6,7 +6,7 @@ public class ImbalancedParanthesesException extends BaseException {
 			super();
 		}
 
-    protected String error() {
+    public String error() {
         return "Pair of parantheses doesn't match";
     }
 }

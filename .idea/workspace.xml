@@ -3,24 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="5f379d5d-2858-4100-a4a0-e0ee73eb29d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/expressions/BinaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/BinaryExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/expressions/Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/Expression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/expressions/TerminalExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/TerminalExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/expressions/UnaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/UnaryExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/gui/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/gui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/numbers/RealNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/numbers/RealNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/BaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/DivideWithZeroException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/DivideWithZeroException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/ImbalancedParanthesesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/ImbalancedParanthesesException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/InvalidSyntaxException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/InvalidSyntaxException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/NegativeRootException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/NegativeRootException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/AddExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/AddExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/BinaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/BinaryExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/CosineExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/CosineExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/DivideExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/DivideExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/expressions/EvaluateExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/EvaluateExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/EvaluateExpressionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/Expression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/MultiplicationExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/MultiplicationExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/NegativeExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/NegativeExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/PowerExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/PowerExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/SineExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/SineExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/SquareRootExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/SquareRootExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/SubtractExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/SubtractExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/TangentExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/TangentExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/expressions/UnaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/expressions/UnaryExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/numbers/RealNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/numbers/RealNumber.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -67,6 +79,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1ZGF6nXJDBfHcfoHKF1ixGSekPk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -76,6 +91,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RunManager">
@@ -123,25 +139,34 @@
     </state>
     <state x="492" y="228" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1584626852215" />
     <state x="492" y="238" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.720@0.0.1280.720" timestamp="1584459430989" />
-    <state width="1877" height="83" key="GridCell.Tab.0.bottom" timestamp="1584883676226">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1235" height="150" key="GridCell.Tab.0.bottom" timestamp="1584893163573">
+      <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1877" height="83" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584883676226" />
-    <state width="1877" height="83" key="GridCell.Tab.0.center" timestamp="1584883676226">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1235" height="150" key="GridCell.Tab.0.bottom/65.24.1301.744@65.24.1301.744" timestamp="1584893163573" />
+    <state width="1235" height="150" key="GridCell.Tab.0.center" timestamp="1584893163572">
+      <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1877" height="83" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584883676226" />
-    <state width="1877" height="83" key="GridCell.Tab.0.left" timestamp="1584883676226">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1235" height="150" key="GridCell.Tab.0.center/65.24.1301.744@65.24.1301.744" timestamp="1584893163572" />
+    <state width="1235" height="150" key="GridCell.Tab.0.left" timestamp="1584893163572">
+      <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1877" height="83" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584883676226" />
-    <state width="1877" height="83" key="GridCell.Tab.0.right" timestamp="1584883676226">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1235" height="150" key="GridCell.Tab.0.left/65.24.1301.744@65.24.1301.744" timestamp="1584893163572" />
+    <state width="1235" height="150" key="GridCell.Tab.0.right" timestamp="1584893163572">
+      <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state width="1877" height="83" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584883676226" />
-    <state x="348" y="174" key="com.intellij.ide.util.TipDialog" timestamp="1584459392110">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1235" height="150" key="GridCell.Tab.0.right/65.24.1301.744@65.24.1301.744" timestamp="1584893163572" />
+    <state x="209" y="24" key="SettingsEditor" timestamp="1584886602197">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="209" y="24" key="SettingsEditor/65.24.1301.744@65.24.1301.744" timestamp="1584886602197" />
+    <state x="419" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1584888594754">
+      <screen x="65" y="24" width="1301" height="744" />
     </state>
     <state x="348" y="174" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1584459392110" />
+    <state x="419" y="204" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584888594754" />
   </component>
 </project>

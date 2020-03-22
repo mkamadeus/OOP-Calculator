@@ -6,7 +6,7 @@ public class InvalidSyntaxException extends BaseException {
 			super();
 		}
 
-    protected String error() {
+    public String error() {
         return "Invalid syntax";
     }
 }
