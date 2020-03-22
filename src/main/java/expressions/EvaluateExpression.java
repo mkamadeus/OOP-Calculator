@@ -1,5 +1,7 @@
 package expressions;
 
+import gui.Calculator;
+import gui.Controller;
 import numbers.Number;
 import numbers.RealNumber;
 import exceptions.*;
@@ -131,6 +133,7 @@ public class EvaluateExpression {
 			}
 
 			// if encountering ans
+<<<<<<< HEAD
 			// else if(token.charAt(i) == 'a'){
 			// 	RealNumber number = new RealNumber(ans);
 			// 	operand.push(number);
@@ -146,6 +149,23 @@ public class EvaluateExpression {
 			// 		}
 			// 	}
 			// }
+=======
+			else if(token.charAt(i) == 'A' ){
+				RealNumber number = new RealNumber(Controller.ans.toString());
+				operand.push(number);
+				i += 2;
+				if(!operator.empty()){
+					if(operator.peek().equals("neg")){
+						RealNumber val1 = operand.peek();
+						Expression num1 = new TerminalExpression(val1);
+						operand.pop();
+						String op = operator.peek();
+						operator.pop();
+						operand.push(solveUnary(num1, op));
+					}
+				}
+			}
+>>>>>>> ed797a441022d8aac60002d1c8407fc62a44454a
 
 			//encountering euler constant as operand, not exponent component
 			else if(token.charAt(i) == 'e'){

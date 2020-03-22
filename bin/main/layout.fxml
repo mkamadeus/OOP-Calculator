@@ -5,270 +5,314 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" styleClass="container" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
-   <children>
-      <GridPane alignment="CENTER" layoutY="244.0" prefHeight="350.0" prefWidth="350.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+<BorderPane styleClass="container" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="container" stylesheets="@styles.css">
          <children>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="sin" textAlignment="CENTER" textFill="#575757">
+            <GridPane alignment="CENTER" layoutY="150.0" prefHeight="350.0" prefWidth="400.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="buttonBackspace" layoutX="209.0" layoutY="290.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="Backspace" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonSine" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="sin" textAlignment="CENTER" textFill="#575757">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonCosine" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="cos" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonTangent" layoutX="80.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="tan" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonSqrt" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="sqrt" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button7" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="7" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button8" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="8" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button9" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="9" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonParOpen" layoutX="150.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="(" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonParClose" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text=")" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button4" layoutX="290.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="4" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button5" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="5" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button6" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="6" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button1" layoutX="290.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="1" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button2" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="2" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button3" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnNumberClick" prefWidth="65.0" text="3" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonAns" layoutX="290.0" layoutY="220.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="Ans" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="button0" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="0" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonEquals" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="=" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonMC" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="MC" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonMR" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="MR" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonClear" layoutX="220.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="CLR" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonMultiply" layoutX="290.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="*" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonDivide" layoutX="220.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="/" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonPlus" layoutX="290.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="+" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonMinus" layoutX="220.0" layoutY="220.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="-" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonPoint" layoutX="343.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="." textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonPower" layoutX="209.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="^" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="buttonParClose1" layoutX="276.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" prefWidth="65.0" text="π" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Black" size="18.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="buttons-base" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </GridPane>
+            <TextField fx:id="numberDisplay" alignment="CENTER_RIGHT" editable="false" layoutY="37.0" maxWidth="-Infinity" prefHeight="80.0" prefWidth="400.0" promptText="0" styleClass="input-display" stylesheets="@styles.css">
                <font>
-                  <Font name="Roboto Black" size="18.0" />
+                  <Font name="System Bold" size="36.0" />
                </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="cos" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1">
+            </TextField>
+            <TextField fx:id="equationDisplay" editable="false" layoutX="25.0" layoutY="7.0" prefHeight="30.0" prefWidth="350.0" promptText="Equation displayed here." styleClass="input-display" stylesheets="@styles.css">
                <font>
-                  <Font name="Roboto Black" size="18.0" />
+                  <Font name="Roboto" size="14.0" />
                </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button layoutX="80.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="tan" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="sqrt" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button7" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="7" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button8" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="8" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button9" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="9" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonParOpen" layoutX="150.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="(" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonParClose" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text=")" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button4" layoutX="290.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="4" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button5" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="5" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button6" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="6" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button1" layoutX="290.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="1" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button2" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="2" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button3" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="3" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonAns" layoutX="290.0" layoutY="220.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="Ans" textAlignment="CENTER" textFill="#575757" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="button0" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="0" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonEquals" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="=" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonMC" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="MC" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonMR" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="MR" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button layoutX="220.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="CLR" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonMultiply" layoutX="290.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="x" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonDivide" layoutX="220.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="/" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonPlus" layoutX="290.0" layoutY="150.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="+" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="3" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
-            <Button fx:id="buttonMinus" layoutX="220.0" layoutY="220.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPress" onKeyReleased="#handleOnKeyRelease" prefWidth="65.0" text="-" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="4" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Roboto Black" size="18.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="buttons-base" />
-               </styleClass>
-            </Button>
+            </TextField>
          </children>
-      </GridPane>
-      <TextField fx:id="numberDisplay" alignment="CENTER_RIGHT" editable="false" layoutY="139.0" prefHeight="80.0" prefWidth="350.0" promptText="0" styleClass="text-display" text="123">
+      </AnchorPane>
+   </center>
+   <top>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="100.0" styleClass="container" text="ɹoʇɐlnɔlɐƆ" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Roboto Black" size="36.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="23.0" layoutY="109.0" prefHeight="30.0" prefWidth="305.0" styleClass="input-display" text="120 + 3">
-         <font>
-            <Font name="Roboto" size="14.0" />
-         </font>
-      </TextField>
-      <Label alignment="CENTER" layoutX="33.0" layoutY="30.0" prefHeight="66.0" prefWidth="284.0" text="Calculator">
-         <font>
-            <Font name="Roboto Black" size="36.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-   </children>
-</AnchorPane>
+   </top>
+</BorderPane>
