@@ -106,6 +106,7 @@ public class EvaluateExpression {
 				operator.push("(");
 			}
 
+			//encountering real numbers
 			else if(Character.isDigit(token.charAt(i)))
 			{
 				String tempNumber = "";
@@ -117,7 +118,56 @@ public class EvaluateExpression {
 				RealNumber number = new RealNumber(tempNumber);
 				operand.push(number);
 				if(!operator.empty()){
-				if(operator.peek().equals("neg")){
+					if(operator.peek().equals("neg")){
+						RealNumber val1 = operand.peek();
+						Expression num1 = new TerminalExpression(val1);
+						operand.pop();
+						String op = operator.peek();
+						operator.pop();
+						operand.push(solveUnary(num1, op));
+					}
+				}
+			}
+
+			// if encountering ans
+			else if(token.charAt(i) == 'a'){
+				RealNumber number = new RealNumber(ans);
+				operand.push(number);
+				i += 2
+				if(!operator.empty()){
+					if(operator.peek().equals("neg")){
+						RealNumber val1 = operand.peek();
+						Expression num1 = new TerminalExpression(val1);
+						operand.pop();
+						String op = operator.peek();
+						operator.pop();
+						operand.push(solveUnary(num1, op));
+					}
+				}
+			}
+
+			//encountering euler constant as operand, not exponent component
+			else if(token.charAt(i) == 'e'){
+				RealNumber number = new RealNumber(Math.exp(1));
+				operand.push(number);
+				if(!operator.empty()){
+					if(operator.peek().equals("neg")){
+						RealNumber val1 = operand.peek();
+						Expression num1 = new TerminalExpression(val1);
+						operand.pop();
+						String op = operator.peek();
+						operator.pop();
+						operand.push(solveUnary(num1, op));
+					}
+				}
+			}
+
+			//encountering pi constant
+			else if(token.charAt(i) == 'p'){
+				RealNumber number = new RealNumber(Math.PI);
+				operand.push(number);
+				if(!operator.empty()){
+					if(operator.peek().equals("neg")){
 						RealNumber val1 = operand.peek();
 						Expression num1 = new TerminalExpression(val1);
 						operand.pop();
@@ -227,8 +277,6 @@ public class EvaluateExpression {
 				}
 				operator.push(cur);
 			}
-
-
 
 		}
 
