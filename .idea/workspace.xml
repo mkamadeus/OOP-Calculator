@@ -3,8 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="5f379d5d-2858-4100-a4a0-e0ee73eb29d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/exceptions/BaseException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/exceptions/BaseException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/exceptions/DivideWithZeroException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/exceptions/DivideWithZeroException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/exceptions/ImbalancedParanthesesException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/exceptions/ImbalancedParanthesesException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/exceptions/InvalidSyntaxException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/exceptions/InvalidSyntaxException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/exceptions/NegativeRootException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/exceptions/NegativeRootException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/AddExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/AddExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/BinaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/BinaryExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/CosineExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/CosineExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/DivideExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/DivideExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/EvaluateExpression$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/EvaluateExpression$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/EvaluateExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/EvaluateExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/Expression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/MultiplicationExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/MultiplicationExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/NegativeExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/NegativeExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/PowerExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/PowerExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/SineExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/SineExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/SquareRootExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/SquareRootExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/SubtractExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/SubtractExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/TangentExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/TangentExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/expressions/UnaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/expressions/UnaryExpression.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/gui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/numbers/RealNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/numbers/RealNumber.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
