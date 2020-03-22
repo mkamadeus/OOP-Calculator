@@ -152,31 +152,27 @@ public class Controller {
     }
 
     @FXML
+<<<<<<< HEAD
     private void handleOnKeyPressed(KeyEvent event) throws BaseException {
         System.out.println(event);
+=======
+    private void handleOnKeyPressed(KeyEvent event) {
+>>>>>>> f529bb53ca70ff8a0061329d6e7450ef5ac7c507
 
         // Check for ans
         if(event.getCode() == KeyCode.A)
         {
-            buttonAns.getStyleClass().removeAll("buttons");
-            buttonAns.getStyleClass().add("buttons:pressed");
+            buttonOnKeyPressStyle(buttonAns);
+            buttonAnsAction();
 
-            if(numberDisplay.getText().equals(""))
-                equationDisplay.setText(equationDisplay.getText() + "Ans");
-            else
-            {
-                equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + "*Ans");
-                numberDisplay.setText("");
-            }
+            return;
         }
 
         // Check for operators
-        for(int i = 0; i < 7 ; i++) if(operatorKeyCodes[i].match(event)) {
-            operatorButtons[i].getStyleClass().removeAll("buttons");
-            operatorButtons[i].getStyleClass().add("buttons:pressed");
-
-            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + operatorButtons[i].getText());
-            numberDisplay.setText("");
+        for(int i = 0; i < 7 ; i++) if(operatorKeyCodes[i].match(event))
+        {
+            buttonOnKeyPressStyle(operatorButtons[i]);
+            buttonOperatorAction(operatorButtons[i]);
 
             return;
         }
@@ -184,31 +180,17 @@ public class Controller {
         // Check for equal button
         if(event.getCode() == KeyCode.EQUALS || event.getCode() == KeyCode.ENTER)
         {
-            buttonEquals.getStyleClass().removeAll("buttons");
-            buttonEquals.getStyleClass().add("buttons:pressed");
+            buttonOnKeyPressStyle(buttonEquals);
+            buttonEqualsAction();
 
-            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
-
-            // Evaluate expression
-            EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
-            Double result = evaluator.parse().value();
-
-            // Save value to ans
-            ans = result;
-
-            numberDisplay.setText(result.toString());
-
-            equationDisplay.setText("");
-
+            return;
         }
 
         // Check for functions
-        for(int i = 0; i < 4; i++) if(functionKeyCodes[i].match(event)){
-            functionButtons[i].getStyleClass().removeAll("buttons");
-            functionButtons[i].getStyleClass().add("buttons:pressed");
-
-            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + functionButtons[i].getText() + "(");
-            numberDisplay.setText("");
+        for(int i = 0; i < 4; i++) if(functionKeyCodes[i].match(event))
+        {
+            buttonOnKeyPressStyle(functionButtons[i]);
+            buttonFunctionAction(functionButtons[i]);
 
             return;
         }
@@ -218,20 +200,14 @@ public class Controller {
         {
             if(event.getCode() == numberKeyCodes[i])
             {
-                numberButtons[i].getStyleClass().removeAll("buttons");
-                numberButtons[i].getStyleClass().add("buttons:pressed");
+                buttonOnKeyPressStyle(numberButtons[i]);
 
                 // If period...
                 if(i==10)
-                {
-                    if (numberDisplay.getText().equals("")) numberDisplay.setText("0");
-                    numberDisplay.setText(numberDisplay.getText() + ".");
-                }
-                // If input is 0 and currently no text...
-                else if(i!=0 || !("".equals(numberDisplay.getText())))
-                {
-                    numberDisplay.setText(numberDisplay.getText() + i);
-                }
+                    buttonPeriodAction(numberButtons[i]);
+                // If input is not 0 and currently display is not empty...
+                else if(i!=0 || !(numberDisplay.getText().equals("")))
+                    buttonNumberAction(numberButtons[i]);
 
                 return;
             }
@@ -240,24 +216,17 @@ public class Controller {
         // Check for BACKSPACE Key
         if(event.getCode() == KeyCode.BACK_SPACE)
         {
-            buttonBackspace.getStyleClass().removeAll("buttons");
-            buttonBackspace.getStyleClass().add("buttons:pressed");
+            buttonOnKeyPressStyle(buttonBackspace);
+            buttonBackspaceAction();
 
-            if(!numberDisplay.getText().equals(""))
-            {
-                String currentText = numberDisplay.getText();
-                numberDisplay.setText(currentText.substring(0,currentText.length()-1));
-                return;
-            }
+            return;
         }
 
         // Check for DELETE Key
         if(event.getCode() == KeyCode.DELETE)
         {
-            buttonClear.getStyleClass().removeAll("buttons");
-            buttonClear.getStyleClass().add("buttons:pressed");
-            numberDisplay.setText("");
-            equationDisplay.setText("");
+            buttonOnKeyPressStyle(buttonClear);
+            buttonClearAction();
 
             return;
         }
@@ -269,40 +238,34 @@ public class Controller {
         // Check for ans
         if(event.getCode() == KeyCode.A)
         {
-            buttonAns.getStyleClass().removeAll("buttons:pressed");
-            buttonAns.getStyleClass().add("buttons");
+            buttonOnKeyReleaseStyle(buttonAns);
         }
 
         // Check for operators
         for(int i = 0; i < 7; i++) if(operatorKeyCodes[i].match(event))
         {
-            operatorButtons[i].getStyleClass().removeAll("buttons:pressed");
-            operatorButtons[i].getStyleClass().add("buttons");
-
+            buttonOnKeyReleaseStyle(operatorButtons[i]);
             return;
         }
 
         // Check for equal button
         if(event.getCode() == KeyCode.EQUALS || event.getCode() == KeyCode.ENTER)
         {
-            buttonEquals.getStyleClass().removeAll("buttons:pressed");
-            buttonEquals.getStyleClass().add("buttons");
-
+            buttonOnKeyReleaseStyle(buttonEquals);
+            return;
         }
 
         // Check for functions
         for(int i = 0; i < 4; i++) if(functionKeyCodes[i].match(event))
         {
-            functionButtons[i].getStyleClass().removeAll("buttons:pressed");
-            functionButtons[i].getStyleClass().add("buttons");
-
+            buttonOnKeyReleaseStyle(functionButtons[i]);
             return;
         }
+
         // Check for number key
         for (int i = 0; i < 11; i++) {
             if (event.getCode() == numberKeyCodes[i]) {
-                numberButtons[i].getStyleClass().removeAll("buttons:pressed");
-                numberButtons[i].getStyleClass().add("buttons");
+                buttonOnKeyReleaseStyle(numberButtons[i]);
                 return;
             }
         }
@@ -310,19 +273,16 @@ public class Controller {
         // Check for BACKSPACE key
         if(event.getCode() == KeyCode.BACK_SPACE)
         {
-            buttonBackspace.getStyleClass().removeAll("buttons:pressed");
-            buttonBackspace.getStyleClass().add("buttons");
+            buttonOnKeyReleaseStyle(buttonBackspace);
+            return;
         }
 
         // Check for DELETE key
         if(event.getCode() == KeyCode.DELETE)
         {
-            buttonClear.getStyleClass().removeAll("buttons:pressed");
-            buttonClear.getStyleClass().add("buttons");
-
+            buttonOnKeyReleaseStyle(buttonClear);
             return;
         }
-
 
     }
 
@@ -331,6 +291,82 @@ public class Controller {
     {
         String text = ((Button)mouseEvent.getSource()).getText();
         numberDisplay.setText(numberDisplay.getText() + text);
+    }
+
+    private void buttonOnKeyPressStyle(Button b)
+    {
+        b.getStyleClass().removeAll("buttons");
+        b.getStyleClass().add("buttons:pressed");
+    }
+
+    private void buttonOnKeyReleaseStyle(Button b)
+    {
+        b.getStyleClass().removeAll("buttons:pressed");
+        b.getStyleClass().add("buttons");
+    }
+
+    private void buttonAnsAction()
+    {
+        if(numberDisplay.getText().equals("")) equationDisplay.setText(equationDisplay.getText() + "Ans");
+        else
+        {
+            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + "*Ans");
+            numberDisplay.setText("");
+        }
+
+    }
+
+    private void buttonOperatorAction(Button b)
+    {
+        equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + b.getText());
+        numberDisplay.setText("");
+    }
+
+    private void buttonEqualsAction()
+    {
+        equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
+
+        // Evaluate expression
+        EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
+        Double result = evaluator.parse().value();
+
+        // Save value to ans
+        ans = result;
+
+        numberDisplay.setText(result.toString());
+        equationDisplay.setText("");
+    }
+
+    private void buttonFunctionAction(Button b)
+    {
+        equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + b.getText() + "(");
+        numberDisplay.setText("");
+    }
+
+    private void buttonPeriodAction(Button b)
+    {
+        if (numberDisplay.getText().equals("")) numberDisplay.setText("0");
+        numberDisplay.setText(numberDisplay.getText() + ".");
+    }
+
+    private void buttonNumberAction(Button b)
+    {
+        numberDisplay.setText(numberDisplay.getText() + b.getText());
+    }
+
+    private void buttonBackspaceAction()
+    {
+        if(!numberDisplay.getText().equals(""))
+        {
+            String currentText = numberDisplay.getText();
+            numberDisplay.setText(currentText.substring(0,currentText.length()-1));
+        }
+    }
+
+    private void buttonClearAction()
+    {
+        numberDisplay.setText("");
+        equationDisplay.setText("");
     }
 
 }
