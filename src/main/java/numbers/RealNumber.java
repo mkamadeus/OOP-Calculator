@@ -20,6 +20,7 @@ public class RealNumber implements Number {
     	}
     }
 
+
     public Double value() {
         return this.value;
     }

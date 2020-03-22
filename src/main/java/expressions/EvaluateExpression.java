@@ -11,6 +11,7 @@ import java.util.*;
 
 public class EvaluateExpression {
 
+	//atribut dari sebuah objek EvaluateExpression
 	protected String token;
 	protected static final Map<String, Integer> pred  = new HashMap<String, Integer>() {{
     put("+", 1);
@@ -27,11 +28,13 @@ public class EvaluateExpression {
     put("neg", 5);
 	}};
 
+	//Konstruktor 
 	public EvaluateExpression(String exp)
 	{
 		this.token = exp;
 	}
 
+	//Method untuk menyelesaikan ekspresi unary
 	public RealNumber solveUnary(Expression num1, String op) throws BaseException {
 		RealNumber def = new RealNumber();
 		if(op.equals("sin"))
@@ -62,27 +65,28 @@ public class EvaluateExpression {
 		return def;
 	}
 
+	//Method untuk menyelesaikan ekspresi binary
 	public RealNumber solveBinary(Expression num1, Expression num2, String op) throws BaseException {
 		RealNumber def = new RealNumber();
 		if(op.equals("+"))
 		{
-			Expression tempVal = new AddExpression(num1, num2); //ganti jadi AddExpression
+			Expression tempVal = new AddExpression(num1, num2);
 			return tempVal.solve();
 		} 
 		else if(op.equals("-"))
 		{
-			Expression tempVal = new SubtractExpression(num1, num2); //ganti jadi SubtractExpression
+			Expression tempVal = new SubtractExpression(num1, num2);
 			return tempVal.solve();
 		} 
 		else if(op.equals("*"))
 		{
-			Expression tempVal = new MultiplicationExpression(num1, num2); //ganti jadi MultiplyExpression
+			Expression tempVal = new MultiplicationExpression(num1, num2);
 			return tempVal.solve();
 		} 
 		else if(op.equals("/"))
 		{
 			try {
-				Expression tempVal = new DivideExpression(num1, num2); //etc..
+				Expression tempVal = new DivideExpression(num1, num2);
 				return tempVal.solve();
 			} catch (BaseException exp){
 				throw exp;
@@ -90,14 +94,16 @@ public class EvaluateExpression {
 		}
 		else if(op.equals("^"))
 		{
-			Expression tempVal = new PowerExpression(num1, num2); //etc..
+			Expression tempVal = new PowerExpression(num1, num2);
 			return tempVal.solve();
 		}
 		return def;
 	}
 
+	//Method untuk melakukan parsing pada ekspresi yang diketikkan oleh pengguna kalkulator
 	public RealNumber parse() throws BaseException {
 
+		//terdapat dua stack untuk melakukan proses perhitungan serta penyimpanan operand dan operator
 		Stack<RealNumber> operand = new Stack<RealNumber>();
 		Stack<String> operator = new Stack<String>();
 		int i;
@@ -106,6 +112,7 @@ public class EvaluateExpression {
 		for(i = 0; i < token.length(); i++)
 		{
 
+			// jika bertemu tanda kurung buka
 			if(token.charAt(i) == '(') 
 			{
 				if(afterNumber)
@@ -140,6 +147,7 @@ public class EvaluateExpression {
 				}
 			}
 
+			// jika bertemu karakter A, maka akan dianggap sebagai Ans, yakni jawaban dari ekspresi ebelumnya
 			else if(token.charAt(i) == 'A' ){
 				RealNumber number = new RealNumber(Controller.ans.toString());
 				operand.push(number);
@@ -192,6 +200,7 @@ public class EvaluateExpression {
 				}
 			}
 
+			// jika bertemu tanda kurung tutup, proses seluruh operator dan operand yang ada di antara kedua kurung
 			else if(token.charAt(i) == ')')
 			{
 				afterNumber = false;
@@ -277,16 +286,19 @@ public class EvaluateExpression {
 				}
 			}
 
+			//untuk handling tanda negatif
 			else if(token.charAt(i)=='-' && (i==0 || (i>0 && token.charAt(i-1)=='(')))
 			{
 				operator.push("neg");
 			}
 
+			//handling tanda positif di awal ekspresi
 			else if(token.charAt(i)=='+' && i==0)
 			{
 				continue;
 			}
 			
+			//jika bertemu operator-operator lain
 			else 
 			{
 

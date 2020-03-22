@@ -152,12 +152,10 @@ public class Controller {
     }
 
     @FXML
-<<<<<<< HEAD
+
     private void handleOnKeyPressed(KeyEvent event) throws BaseException {
         System.out.println(event);
-=======
-    private void handleOnKeyPressed(KeyEvent event) {
->>>>>>> f529bb53ca70ff8a0061329d6e7450ef5ac7c507
+
 
         // Check for ans
         if(event.getCode() == KeyCode.A)
@@ -322,8 +320,7 @@ public class Controller {
         numberDisplay.setText("");
     }
 
-    private void buttonEqualsAction()
-    {
+    private void buttonEqualsAction() throws BaseException {
         equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
 
         // Evaluate expression
