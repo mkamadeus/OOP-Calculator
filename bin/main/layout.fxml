@@ -284,7 +284,7 @@
                         <String fx:value="buttons-base" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="buttonParClose1" layoutX="276.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnMouseClick" prefWidth="65.0" text="π" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <Button fx:id="buttonPi" layoutX="276.0" layoutY="80.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#handleOnKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseClicked="#handleOnMouseClick" prefWidth="65.0" text="π" textAlignment="CENTER" textFill="#575757" GridPane.columnIndex="5" GridPane.rowIndex="1">
                      <font>
                         <Font name="Roboto Black" size="18.0" />
                      </font>
@@ -309,7 +309,7 @@
       </AnchorPane>
    </center>
    <top>
-      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="100.0" styleClass="container" text="ɹoʇɐlnɔlɐƆ" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="100.0" styleClass="container" text="Calculator" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>

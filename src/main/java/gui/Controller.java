@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.input.*;
-import numbers.RealNumber;
 
 public class Controller {
 
@@ -37,6 +36,8 @@ public class Controller {
     private Button buttonPoint;
     @FXML
     private Button buttonAns;
+    @FXML
+    private Button buttonPi;
 
     /* -=-=-=-=- OPERATOR RELATED BUTTONS -=-=-=-=- */
     @FXML
@@ -226,6 +227,15 @@ public class Controller {
             return;
         }
 
+        // Check for pi button
+        if(new KeyCodeCombination(KeyCode.P, KeyCombination.SHIFT_DOWN).match(event))
+        {
+            buttonOnKeyPressStyle(buttonPi);
+            buttonPiAction();
+
+            return;
+        }
+
     }
 
     @FXML
@@ -279,6 +289,12 @@ public class Controller {
             return;
         }
 
+        // Check for pi button
+        if(new KeyCodeCombination(KeyCode.P, KeyCombination.SHIFT_DOWN).match(event))
+        {
+            buttonOnKeyReleaseStyle(buttonPi);
+            return;
+        }
     }
 
     @FXML
@@ -349,11 +365,16 @@ public class Controller {
             case "Equals":
                 buttonEqualsAction();
                 break;
+            case "Pi":
+                buttonPiAction();
+                break;
             default:
                 break;
         }
 
     }
+
+    /* -=-=-=-=- ACTION RELATED METHODS -=-=-=-=- */
 
     private void buttonOnKeyPressStyle(Button b)
     {
@@ -429,6 +450,16 @@ public class Controller {
     {
         numberDisplay.setText("");
         equationDisplay.setText("");
+    }
+
+    private void buttonPiAction()
+    {
+        if(numberDisplay.getText().equals(""))
+            equationDisplay.setText(equationDisplay.getText() + "pi");
+        else
+            equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() +"*pi");
+
+        numberDisplay.setText("");
     }
 
 }
