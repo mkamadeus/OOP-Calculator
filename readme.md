@@ -31,3 +31,4 @@ Using keyboard :
 |`Shift + R`| Square root operator. |
 |`A`| For using previous answer. |
 |`Enter` or `=`| Calculate current equation displayed. |
+|`Delete`| Clear display. |
