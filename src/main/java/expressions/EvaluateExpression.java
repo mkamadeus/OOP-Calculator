@@ -306,7 +306,6 @@ public class EvaluateExpression {
 				if(token.charAt(i)=='-'){
 					if(!afterNumber){
 						cur = "neg";
-						i += 2;
 					}
 				}
 				if(token.charAt(i)=='t'){
@@ -328,6 +327,9 @@ public class EvaluateExpression {
 				afterNumber = false;
 				if(!operator.empty()){
 					while((pred.get(operator.peek()) >= pred.get(cur))){
+						if(operand.empty()){
+							break;
+						}
 						RealNumber val2 = operand.peek();
 						Expression num2 = new TerminalExpression(val2);
 						operand.pop();
@@ -358,6 +360,24 @@ public class EvaluateExpression {
 				throw exp;
 			}
 
+			if(operand.size()<2){
+				throw new InvalidSyntaxException();
+			}
+
+//			try{
+//				RealNumber val2 = operand.peek();
+//				Expression num2 = new TerminalExpression(val2);
+//				operand.pop();
+//
+//				RealNumber val1 = operand.peek();
+//				Expression num1 = new TerminalExpression(val1);
+//				operand.pop();
+//
+//				operand.push(solveBinary(num1, num2, op));
+//			} catch (Exception e){
+//				throw new InvalidSyntaxException();
+//			}
+
 			RealNumber val2 = operand.peek();
 			Expression num2 = new TerminalExpression(val2);
 			operand.pop();
@@ -365,7 +385,7 @@ public class EvaluateExpression {
 			RealNumber val1 = operand.peek();
 			Expression num1 = new TerminalExpression(val1);
 			operand.pop();
-			
+
 			operand.push(solveBinary(num1, num2, op));
 		}
 		
