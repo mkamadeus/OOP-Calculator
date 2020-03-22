@@ -1,5 +1,7 @@
 package expressions;
 
+import gui.Calculator;
+import gui.Controller;
 import numbers.Number;
 import numbers.RealNumber;
 
@@ -130,8 +132,8 @@ public class EvaluateExpression {
 			}
 
 			// if encountering ans
-			else if(token.charAt(i) == 'a'){
-				RealNumber number = new RealNumber("0");
+			else if(token.charAt(i) == 'A' ){
+				RealNumber number = new RealNumber(Controller.ans.toString());
 				operand.push(number);
 				i += 2;
 				if(!operator.empty()){

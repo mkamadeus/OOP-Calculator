@@ -14,3 +14,20 @@ Type in on your command line:
 ```bash
 gradle run
 ```
+
+## Controls
+Using keyboard : 
+|Controls |Action | 
+|---|---|
+|`0-9`, `.`| For inputting numbers into the calculator. |
+|`Shift + =`| Plus operator. |
+|`-`| Minus operator. |
+|`Shift + 8`| Multiply operator. |
+|`/`| Divide operator. |
+|`Shift + ^`| Power operator. |
+|`Shift + S`| Sine operator. |
+|`Shift + C`| Cosine operator. |
+|`Shift + T`| Tangent operator. |
+|`Shift + R`| Square root operator. |
+|`A`| For using previous answer. |
+|`Enter` or `=`| Calculate current equation displayed. |

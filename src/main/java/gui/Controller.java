@@ -9,6 +9,8 @@ import numbers.RealNumber;
 
 public class Controller {
 
+    public static Double ans = 0.0;
+
     /* -=-=-=-=- NUMBER RELATED BUTTONS -=-=-=-=- */
     @FXML
     private Button button0;
@@ -152,6 +154,21 @@ public class Controller {
     private void handleOnKeyPressed(KeyEvent event) {
         System.out.println(event);
 
+        // Check for ans
+        if(event.getCode() == KeyCode.A)
+        {
+            buttonAns.getStyleClass().removeAll("buttons");
+            buttonAns.getStyleClass().add("buttons:pressed");
+
+            if(numberDisplay.getText().equals(""))
+                equationDisplay.setText(equationDisplay.getText() + "Ans");
+            else
+            {
+                equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText() + "*Ans");
+                numberDisplay.setText("");
+            }
+        }
+
         // Check for operators
         for(int i = 0; i < 7 ; i++) if(operatorKeyCodes[i].match(event)) {
             operatorButtons[i].getStyleClass().removeAll("buttons");
@@ -173,9 +190,12 @@ public class Controller {
 
             // Evaluate expression
             EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
-            RealNumber result = evaluator.parse();
+            Double result = evaluator.parse().value();
 
-            numberDisplay.setText(result.value().toString());
+            // Save value to ans
+            ans = result;
+
+            numberDisplay.setText(result.toString());
 
             equationDisplay.setText("");
 
@@ -245,6 +265,13 @@ public class Controller {
 
     @FXML
     private void handleOnKeyReleased(KeyEvent event) {
+        // Check for ans
+        if(event.getCode() == KeyCode.A)
+        {
+            buttonAns.getStyleClass().removeAll("buttons:pressed");
+            buttonAns.getStyleClass().add("buttons");
+        }
+
         // Check for operators
         for(int i = 0; i < 7; i++) if(operatorKeyCodes[i].match(event))
         {
