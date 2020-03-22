@@ -4,6 +4,8 @@ import expressions.Expression;
 import expressions.UnaryExpression;
 import numbers.Number;
 import numbers.RealNumber;
+import exceptions.BaseException;
+import exceptions.NegativeRootException;
 
 public class SquareRootExpression extends UnaryExpression{
     
@@ -14,6 +16,15 @@ public class SquareRootExpression extends UnaryExpression{
 
     public RealNumber solve()
     {
-        return new RealNumber(Math.pow(e.solve().value(), 0.5));
+    		if(e.solve().value() < 0)
+    		{
+    			BaseException exp = new NegativeRootException();
+    			throw exp;
+    		}
+    		else
+    		{
+    			return new RealNumber(Math.pow(e.solve().value(), 0.5));
+    		}
+        
     }
 }

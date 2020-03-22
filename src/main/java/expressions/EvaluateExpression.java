@@ -2,6 +2,7 @@ package expressions;
 
 import numbers.Number;
 import numbers.RealNumber;
+import exceptions.*;
 
 import java.io.*; 
 import java.util.*; 
@@ -130,21 +131,21 @@ public class EvaluateExpression {
 			}
 
 			// if encountering ans
-			else if(token.charAt(i) == 'a'){
-				RealNumber number = new RealNumber(ans);
-				operand.push(number);
-				i += 2
-				if(!operator.empty()){
-					if(operator.peek().equals("neg")){
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
-						String op = operator.peek();
-						operator.pop();
-						operand.push(solveUnary(num1, op));
-					}
-				}
-			}
+			// else if(token.charAt(i) == 'a'){
+			// 	RealNumber number = new RealNumber(ans);
+			// 	operand.push(number);
+			// 	i += 2;
+			// 	if(!operator.empty()){
+			// 		if(operator.peek().equals("neg")){
+			// 			RealNumber val1 = operand.peek();
+			// 			Expression num1 = new TerminalExpression(val1);
+			// 			operand.pop();
+			// 			String op = operator.peek();
+			// 			operator.pop();
+			// 			operand.push(solveUnary(num1, op));
+			// 		}
+			// 	}
+			// }
 
 			//encountering euler constant as operand, not exponent component
 			else if(token.charAt(i) == 'e'){
@@ -165,6 +166,7 @@ public class EvaluateExpression {
 			//encountering pi constant
 			else if(token.charAt(i) == 'p'){
 				RealNumber number = new RealNumber(Math.PI);
+				i += 1;
 				operand.push(number);
 				if(!operator.empty()){
 					if(operator.peek().equals("neg")){
@@ -195,44 +197,52 @@ public class EvaluateExpression {
 						operator.pop();
 
 						operand.push(solveBinary(num1, num2, op));
+
 					}
+					operator.pop();
+					if(!operator.empty()){
+						String op = operator.peek();
+						if(op.equals("sin"))
+						{
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
+							operator.pop();
+							operand.push(solveUnary(num1, op));
+						}
+						else if(op.equals("cos"))
+						{
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
+							operator.pop();
+							operand.push(solveUnary(num1, op));
+						}
+						else if(op.equals("tan"))
+						{
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
+							operator.pop();
+							operand.push(solveUnary(num1, op));
+						}
+						else if(op.equals("sqrt"))
+						{
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
+							operator.pop();
+							operand.push(solveUnary(num1, op));
+						}
+					}
+
+				} 
+				else 
+				{
+					BaseException exp = new ImbalancedParanthesesException();
+					throw exp;
 				}
-				operator.pop();
-				if(!operator.empty()){
-					String op = operator.peek();
-					if(op.equals("sin"))
-					{
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
-						operator.pop();
-						operand.push(solveUnary(num1, op));
-					}
-					else if(op.equals("cos"))
-					{
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
-						operator.pop();
-						operand.push(solveUnary(num1, op));
-					}
-					else if(op.equals("tan"))
-					{
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
-						operator.pop();
-						operand.push(solveUnary(num1, op));
-					}
-					else if(op.equals("sqrt"))
-					{
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
-						operator.pop();
-						operand.push(solveUnary(num1, op));
-					}
-				}
+				
 			}
 
 			else if(token.charAt(i)=='-' && (i==0 || (i>0 && token.charAt(i-1)=='('))) {

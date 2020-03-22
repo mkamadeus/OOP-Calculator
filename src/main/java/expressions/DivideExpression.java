@@ -4,6 +4,8 @@ import expressions.Expression;
 import expressions.BinaryExpression;
 import numbers.Number;
 import numbers.RealNumber;
+import exceptions.BaseException;
+import exceptions.DivideWithZeroException;
 
 public class DivideExpression extends BinaryExpression{
     
@@ -13,7 +15,16 @@ public class DivideExpression extends BinaryExpression{
     }
 
     public RealNumber solve()
-    {
-        return new RealNumber(e1.solve().value() / e2.solve().value());
+    {	
+    		if (e2.solve().value() == 0)
+    		{
+    			BaseException exp = new DivideWithZeroException();
+    			throw exp;
+    		} 
+            else
+    		{
+    			return new RealNumber(e1.solve().value() / e2.solve().value());
+    		}
+        
     }
 }
