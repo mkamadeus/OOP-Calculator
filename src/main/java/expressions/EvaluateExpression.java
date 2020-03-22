@@ -283,7 +283,6 @@ public class EvaluateExpression {
 					cur = "sqrt";
 					i += 3;
 				}
-				}
 				if(!operator.empty()){
 					while((pred.get(operator.peek()) >= pred.get(cur))){
 						RealNumber val2 = operand.peek();
