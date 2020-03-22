@@ -183,16 +183,18 @@ public class EvaluateExpression {
 
 			//encountering mr
 			else if(token.charAt(i) == 'r'){
-				RealNumber number = new RealNumber(memory.remove());
-				operand.push(number);
-				if(!operator.empty()){
-					if(operator.peek().equals("neg")){
-						RealNumber val1 = operand.peek();
-						Expression num1 = new TerminalExpression(val1);
-						operand.pop();
-						String op = operator.peek();
-						operator.pop();
-						operand.push(solveUnary(num1, op));
+				if (!memory.isEmpty()){
+					RealNumber number = new RealNumber(memory.remove());
+					operand.push(number);
+					if(!operator.empty()){
+						if(operator.peek().equals("neg")){
+							RealNumber val1 = operand.peek();
+							Expression num1 = new TerminalExpression(val1);
+							operand.pop();
+							String op = operator.peek();
+							operator.pop();
+							operand.push(solveUnary(num1, op));
+						}
 					}
 				}
 			}
@@ -201,7 +203,7 @@ public class EvaluateExpression {
 			else if(token.charAt(i) == 'm'){
 				RealNumber number = new RealNumber(operand.peek());
 				memory.add(number.value());
-			}
+			}  
 
 			else if(token.charAt(i) == ')')
 			{
