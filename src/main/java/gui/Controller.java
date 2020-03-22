@@ -8,9 +8,13 @@ import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.input.*;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Controller {
 
     public static Double ans = 0.0;
+    public static Queue<Double> history = new LinkedList<>();
 
     /* -=-=-=-=- NUMBER RELATED BUTTONS -=-=-=-=- */
     @FXML
@@ -78,6 +82,12 @@ public class Controller {
     private Button buttonClear;
     @FXML
     private Button buttonEquals;
+
+    /* -=-=-=-=- HISTORY RELATED FIELDS -=-=-=-=- */
+    @FXML
+    private Button buttonMC;
+    @FXML
+    private Button buttonMR;
 
 
     // Array to store number buttons reference
@@ -155,9 +165,22 @@ public class Controller {
 
     @FXML
 
-    private void handleOnKeyPressed(KeyEvent event) throws BaseException {
-        System.out.println(event);
+    private void handleOnKeyPressed(KeyEvent event) {
+        // Check for MC
+        if(event.getCode() == KeyCode.C)
+        {
+            // ubah style pas pressed, panggil action, ini jgn lupa ada
 
+            return;
+        }
+
+        // Check for MR
+        if(event.getCode() == KeyCode.R)
+        {
+            // ubah style pas pressed, panggil action
+
+            return;
+        }
 
         // Check for ans
         if(event.getCode() == KeyCode.A)
@@ -244,6 +267,21 @@ public class Controller {
 
     @FXML
     private void handleOnKeyReleased(KeyEvent event) {
+        // Check for MC
+        if(event.getCode() == KeyCode.C)
+        {
+            // ubah style pas pressed, pasangan yg on pressed
+
+            return;
+        }
+
+        // Check for MR
+        if(event.getCode() == KeyCode.R) {
+            // ubah style pas pressed, panggil action
+
+            return;
+        }
+
         // Check for ans
         if(event.getCode() == KeyCode.A)
         {
@@ -372,6 +410,12 @@ public class Controller {
             case "Pi":
                 buttonPiAction();
                 break;
+            case "MC":
+                //action
+                break;
+            case "MR":
+                //action
+                break;
             default:
                 break;
         }
@@ -409,12 +453,14 @@ public class Controller {
         numberDisplay.setText("");
     }
 
-    private void buttonEqualsAction() throws BaseException {
+    private void buttonEqualsAction() {
         equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
+
+        /* -=-=-= TRY CATCH BLOCK HERE -=-=-==-= */
 
         // Evaluate expression
         EvaluateExpression evaluator = new EvaluateExpression(equationDisplay.getText());
-        Double result = evaluator.parse().value();
+        Number result = evaluator.parse();
 
         // Save value to ans
         ans = result;
@@ -464,5 +510,16 @@ public class Controller {
 
         numberDisplay.setText("");
     }
+
+    private void buttonMCAction()
+    {
+        // Action
+    }
+
+    private void buttonMRAction()
+    {
+        // Action
+    }
+
 
 }
