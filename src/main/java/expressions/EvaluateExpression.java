@@ -289,8 +289,14 @@ public class EvaluateExpression {
 			
 			else 
 			{
-				afterNumber = false;
+
 				String cur = String.valueOf(token.charAt(i));
+				if(token.charAt(i)=='-'){
+					if(!afterNumber){
+						cur = "neg";
+						i += 2;
+					}
+				}
 				if(token.charAt(i)=='t'){
 					cur = "tan";
 					i += 2;
@@ -307,6 +313,7 @@ public class EvaluateExpression {
 					cur = "sqrt";
 					i += 3;
 				}
+				afterNumber = false;
 				if(!operator.empty()){
 					while((pred.get(operator.peek()) >= pred.get(cur))){
 						RealNumber val2 = operand.peek();
