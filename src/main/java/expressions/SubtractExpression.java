@@ -1,5 +1,6 @@
 package expressions;
 
+import exceptions.BaseException;
 import expressions.Expression;
 import expressions.BinaryExpression;
 import numbers.Number;
@@ -12,8 +13,7 @@ public class SubtractExpression extends BinaryExpression{
         super(e1,e2);
     }
 
-    public RealNumber solve()
-    {
+    public RealNumber solve() throws BaseException {
         return new RealNumber(e1.solve().value() - e2.solve().value());
     }
 }

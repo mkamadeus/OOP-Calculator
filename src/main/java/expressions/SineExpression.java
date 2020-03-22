@@ -1,5 +1,6 @@
 package expressions;
 
+import exceptions.BaseException;
 import expressions.Expression;
 import expressions.UnaryExpression;
 import numbers.Number;
@@ -12,8 +13,7 @@ public class SineExpression extends UnaryExpression{
         super(e1);
     }
 
-    public RealNumber solve()
-    {
+    public RealNumber solve() throws BaseException {
         return new RealNumber(Math.sin(e.solve().value()));
     }
 }

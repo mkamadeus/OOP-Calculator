@@ -1,5 +1,6 @@
 package gui;
 
+import exceptions.BaseException;
 import expressions.EvaluateExpression;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -153,7 +154,10 @@ public class Controller {
     }
 
     @FXML
-    private void handleOnKeyPressed(KeyEvent event) {
+
+    private void handleOnKeyPressed(KeyEvent event) throws BaseException {
+        System.out.println(event);
+
 
         // Check for ans
         if(event.getCode() == KeyCode.A)
@@ -405,8 +409,7 @@ public class Controller {
         numberDisplay.setText("");
     }
 
-    private void buttonEqualsAction()
-    {
+    private void buttonEqualsAction() throws BaseException {
         equationDisplay.setText(equationDisplay.getText() + numberDisplay.getText());
 
         // Evaluate expression

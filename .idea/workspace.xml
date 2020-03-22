@@ -6,12 +6,14 @@
       <change beforePath="$PROJECT_DIR$/bin/main/gui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/gui/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/layout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -55,8 +57,18 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1ZGF6nXJDBfHcfoHKF1ixGSekPk" />
   <component name="ProjectViewState">
@@ -65,11 +77,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.EvaluateExpressionTester">
     <configuration name="Calculator [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -89,8 +107,71 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="EvaluateExpressionTester" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;EvaluateExpressionTester&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ExceptionTester" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ExceptionTester&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TemperatureCalculatorTester" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TemperatureCalculatorTester&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.EvaluateExpressionTester" />
+        <item itemvalue="Gradle.ExceptionTester" />
+        <item itemvalue="Gradle.TemperatureCalculatorTester" />
         <item itemvalue="Gradle.Calculator [run]" />
       </list>
     </recent_temporary>
@@ -109,6 +190,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="315" y="44" width="847" height="675" key="#Project_Structure" timestamp="1584895074551">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="315" y="44" width="847" height="675" key="#Project_Structure/65.24.1301.744@65.24.1301.744" timestamp="1584895074551" />
+    <state x="165" y="96" width="1101" height="572" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584895491125">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="165" y="96" width="1101" height="572" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/65.24.1301.744@65.24.1301.744" timestamp="1584895491125" />
     <state x="492" y="228" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584626852215">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -138,5 +227,18 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="348" y="174" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1584459392110" />
+    <state x="419" y="204" key="com.intellij.ide.util.TipDialog/65.24.1301.744@65.24.1301.744" timestamp="1584888594754" />
+    <state x="374" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584897580393">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="374" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/65.24.1301.744@65.24.1301.744" timestamp="1584897580393" />
+    <state x="65" y="24" key="new project wizard" timestamp="1584895046290">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="65" y="24" key="new project wizard/65.24.1301.744@65.24.1301.744" timestamp="1584895046290" />
+    <state x="378" y="89" key="search.everywhere.popup" timestamp="1584896179432">
+      <screen x="65" y="24" width="1301" height="744" />
+    </state>
+    <state x="378" y="89" key="search.everywhere.popup/65.24.1301.744@65.24.1301.744" timestamp="1584896179432" />
   </component>
 </project>
